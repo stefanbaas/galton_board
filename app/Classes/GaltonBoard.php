@@ -7,6 +7,8 @@ class GaltonBoard
     private $numBalls = 0;
     private $numSlots = 0;
     private $board = array();
+    private $slots = array();
+    private $curRow = 0;
 
     public function setNumBalls($numBalls)
     {
@@ -18,7 +20,7 @@ class GaltonBoard
         $this->numSlots = $numSlots;
     }
 
-    public function createBoard()
+    private function _createBoard()
     {
         $board = array();
         for($nr = 1; $nr <= $this->numSlots; $nr++){
@@ -26,5 +28,17 @@ class GaltonBoard
         }
 
         $this->board = $board;
+    }
+
+    private function _createSlots()
+    {
+        $slots = array_fill(0, $this->numSlots, 0);
+        $this->slots = $slots;
+    }
+
+    public function init()
+    {
+        $this->_createBoard();
+        $this->_createSlots();
     }
 }

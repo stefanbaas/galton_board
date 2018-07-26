@@ -41,7 +41,15 @@ class GaltonBoardTest extends TestCase
     public function testCreateBoard()
     {
         $this->sut->setNumSlots(3);
-        $this->sut->createBoard();
+        $this->sut->init();
         $this->assertEquals(array(array(0),array(0,0),array(0,0,0)), $this->getObjectAttribute($this->sut, 'board'));
     }
+
+    public function testCreateSlots()
+    {
+        $this->sut->setNumSlots(5);
+        $this->sut->init();
+        $this->assertEquals(array(0,0,0,0,0), $this->getObjectAttribute($this->sut, 'slots'));
+    }
+
 }
