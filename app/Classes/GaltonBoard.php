@@ -11,4 +11,9 @@ class GaltonBoard
     {
         $this->numBalls = $numBalls;
     }
+
+    public function setNumSlots($numSlots)
+    {
+        $this->numSlots = $numSlots;
+    }
 }

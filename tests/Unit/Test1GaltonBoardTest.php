@@ -28,7 +28,14 @@ class GaltonBoardTest extends TestCase
 
     public function testSetNumBalls()
     {
-        $this->sut->setNumBalls(5);
-        $this->assertEquals(5, $this->getObjectAttribute($this->sut, 'numBalls'));
+        $this->sut->setNumBalls(50);
+        $this->assertEquals(50, $this->getObjectAttribute($this->sut, 'numBalls'));
     }
+
+    public function testSetNumSlots()
+    {
+        $this->sut->setNumSlots(13);
+        $this->assertEquals(13, $this->getObjectAttribute($this->sut, 'numSlots'));
+    }
+
 }
