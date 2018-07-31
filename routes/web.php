@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $numBalls = 200;
+    $numSlots = 27;
+
+    $galtonBoard = new \App\Classes\GaltonBoard();
+    $galtonBoard->setNumBalls($numBalls);
+    $galtonBoard->setNumSlots($numSlots);
+    $galtonBoard->init();
+    $galtonBoard->start();
+
+    $slots = $galtonBoard->getSlots();
+
+    return view('welcome', array('slots' => $slots, 'numBalls' => $numBalls, 'numSlots' => $numSlots));
 });
