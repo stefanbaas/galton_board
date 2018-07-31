@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Classes\GaltonBoard;
+use App\Interfaces\GaltonBoardInterface;
 use ReflectionClass;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -28,6 +29,11 @@ class GaltonBoardTest extends TestCase
         $method = $class->getMethod($name);
         $method->setAccessible(true);
         return $method;
+    }
+
+    public function testInstanceOf()
+    {
+        $this->assertInstanceOf(GaltonBoardInterface::class, $this->sut);
     }
 
     public function testSetNumBalls()

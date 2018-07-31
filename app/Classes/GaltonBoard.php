@@ -2,7 +2,9 @@
 
 namespace App\Classes;
 
-class GaltonBoard
+use App\Interfaces\GaltonBoardInterface;
+
+class GaltonBoard implements GaltonBoardInterface
 {
     private $numBalls = 0;
     private $numSlots = 0;
@@ -142,7 +144,7 @@ class GaltonBoard
      * Get the slots array
      * @return array
      */
-    public function getSlots()
+    public function getSlots() :array
     {
         return $this->slots;
     }
