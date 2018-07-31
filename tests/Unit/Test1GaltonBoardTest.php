@@ -30,11 +30,6 @@ class GaltonBoardTest extends TestCase
         return $method;
     }
 
-    public function testInstantiation()
-    {
-        $this->assertNotNull($this->sut);
-    }
-
     public function testSetNumBalls()
     {
         $this->sut->setNumBalls(50);
